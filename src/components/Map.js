@@ -3,15 +3,32 @@ import {
   withScriptjs,
   withGoogleMap,
   GoogleMap,
-  Marker
+  Circle
 } from "react-google-maps";
 
+const getCircleOptions = (
+  lat = 40.73061,
+  lng = -73.935242,
+  radius = Math.sqrt(1000) * 100
+) => {
+  return {
+    strokeColor: "#FF0000",
+    strokeOpacity: 0.8,
+    strokeWeight: 0.35,
+    fillColor: "#FF0000",
+    fillOpacity: 0.35,
+    center: { lat, lng },
+    radius: radius
+  };
+};
 const Map = withScriptjs(
   withGoogleMap(props => (
     <GoogleMap
       defaultZoom={8}
       defaultCenter={{ lat: 40.73061, lng: -73.935242 }}
-    />
+    >
+      <Circle options={getCircleOptions()} />
+    </GoogleMap>
   ))
 );
 
