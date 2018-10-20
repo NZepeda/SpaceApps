@@ -4,7 +4,22 @@ import Map from "./components/Map";
 import "./App.css";
 
 class App extends Component {
+  state = {
+    radius: ""
+  };
+  updateState(radius, name) {
+    this.setState({ radius: radius, name: name });
+  }
   componentDidMount() {
+    axios
+      .get("https://teasteroidm-api.herokuapp.com/api")
+      .then(json =>
+        json.data.map(result =>
+          this.updateState(result.blastRadius, result.name)
+        )
+      );
+    // .then(newData => console.log(newData));
+    //============
     this.getAllData();
   }
   getCircleOptions(
@@ -34,10 +49,31 @@ class App extends Component {
         console.log(results);
       });
   }
+
   render() {
+    const radius = this.state.radius;
     return (
       <div className="App">
+        <header />
         <Map circleOptions={this.getCircleOptions()} />
+        <div id="knowledge">
+          <ul>
+            <li>Energy Amount</li>
+            <li>Mass</li>
+            <li>Velocity</li>
+            <li>Blast Radius: {radius}</li>
+            <a href="https://www.nasa.gov/feature/jpl/nasa-and-fema-conduct-asteroid-impact-emergency-planning-exercise">
+              Emergency Preparedness Plan
+            </a>
+          </ul>
+        </div>
+
+        <div id="about" />
+        <p>
+          The Tracking Extraterrestrial Astroids and Meteorites (T.E.A.M) was
+          created for the purpose to identify potential asteroids threats that
+          could potentially hit the earth atmosphere.{" "}
+        </p>
       </div>
     );
   }
