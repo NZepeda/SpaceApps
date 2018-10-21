@@ -1,36 +1,94 @@
-.App {
-    text-align: center;
+map {
+    margin: 20px;
 }
 
-.App-logo {
-    animation: App-logo-spin infinite 20s linear;
-    height: 40vmin;
-}
-
-.App-header {
-    background-color: #282c34;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#list {
+    width: 410px;
+    margin: 30px;
     justify-content: center;
-    font-size: calc(10px + 2vmin);
-    color: white;
 }
 
-li {
+#list {
     list-style-type: none;
+    list-style-type: decimal;
+    margin-left: 1em;
+    padding: 0;
+    counter-reset: li-counter;
 }
 
-.App-link {
-    color: #61dafb;
+#list li {
+    position: relative;
+    margin-bottom: 1.5em;
+    padding: 0.5em;
+    background-color: #f0d756;
+    padding-left: 58px;
 }
 
-@keyframes App-logo-spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+#list li:hover {
+    box-shadow: inset -1em 0 #6cd6cc;
+    -webkit-transition: box-shadow 0.5s;
+    /* For Safari 3.1 to 6.0 */
+    transition: box-shadow 0.5s;
+}
+
+#list li:before {
+    position: absolute;
+    top: -0.3em;
+    left: -0.5em;
+    width: 1.8em;
+    height: 1.2em;
+    font-size: 2em;
+    line-height: 1.2;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #6cd6cc;
+    transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    -webkit-transform: rotate(-20deg);
+    z-index: 99;
+    overflow: hidden;
+    content: counter(li-counter);
+    counter-increment: li-counter;
+}
+
+#list a {
+    position: relative;
+    margin-bottom: 1.5em;
+    padding: 0.5em;
+    background-color: #f0d756;
+    padding-left: 58px;
+}
+
+#list a:hover {
+    box-shadow: inset -1em 0 #6cd6cc;
+    -webkit-transition: box-shadow 0.5s;
+    /* For Safari 3.1 to 6.0 */
+    transition: box-shadow 0.5s;
+}
+
+#list a:before {
+    position: absolute;
+    top: -0.3em;
+    left: -0.5em;
+    width: 1.8em;
+    height: 1.2em;
+    font-size: 2em;
+    line-height: 1.2;
+    font-weight: bold;
+    text-align: center;
+    color: white;
+    background-color: #6cd6cc;
+    transform: rotate(-20deg);
+    -ms-transform: rotate(-20deg);
+    -webkit-transform: rotate(-20deg);
+    z-index: 99;
+    overflow: hidden;
+    content: counter(li-counter);
+    counter-increment: li-counter;
+}
+
+#knowledge {
+    display: table;
+    margin: 0 auto;
 }

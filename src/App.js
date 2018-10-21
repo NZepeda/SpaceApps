@@ -81,7 +81,7 @@ class App extends Component {
             /> <
             div id = "knowledge" >
             <
-            ul >
+            ul id = "list" >
             <
             li > Name: { name } < /li> <
             li > Energy Amount: { energy } < /li> <
