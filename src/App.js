@@ -4,6 +4,7 @@ import Map from "./components/Map";
 import "./App.css";
 class App extends Component {
     state = {
+        name: "",
         radius: "",
         energy: "",
         mass: "",
@@ -64,10 +65,13 @@ class App extends Component {
             });
     }
     render() {
+        const name = this.state.name;
         const blastRadius = this.state.blastRadius;
         const energy = this.state.energy;
         const mass = this.state.mass;
         const vel = this.state.v_imp;
+        const fireball = this.state.fireball;
+        const richterScale = this.state.richterScale;
         return ( <
             div className = "App" >
             <
@@ -79,21 +83,24 @@ class App extends Component {
             <
             ul >
             <
+            li > Name: { name } < /li> <
             li > Energy Amount: { energy } < /li> <
             li > Mass: { mass } < /li> <
             li > Velocity: { vel } < /li> <
-            li > Blast Radius: { blastRadius } < /li> <
+            li > Blast Radius: { blastRadius } < /li>  <
+            li > Fireball: { fireball } < /li> <
+            li > Richter Scale: { richterScale } < /li> <
             a href = "https://www.nasa.gov/feature/jpl/nasa-and-fema-conduct-asteroid-impact-emergency-planning-exercise" >
             Emergency Preparedness Plan <
-            /a> <
-            /ul> <
+            /a> < /
+            ul > <
             /div> <
             div id = "about" / >
             <
             p >
             The Tracking Extraterrestrial Astroids and Meteorites(T.E.A.M) was created
-            for the purpose of identifying potential threats posed by Astroids and Meteorites to Earth atmosphere.The primary objective of the TEAM App 's is to provide up-to-date critical information to  in order to educate communities around the world to be prepared to mitigate the potential impact of Astroids related disasters. <
-            /p> <
+            for the purpose of identifying potential threats posed by Astroids and Meteorites to Earth atmosphere.The primary objective of the TEAM App 's is to provide up-to-date critical information to  in order to educate communities around the world to be prepared to mitigate the potential impact of Astroids related disasters. < /
+            p > <
             /div>
         );
     }
