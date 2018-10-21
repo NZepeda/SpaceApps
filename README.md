@@ -20,7 +20,9 @@ Sample
  ![ProjectSchedule](/uploads/91976f0c0d57a4def2ccb4c8d1261e10/ProjectSchedule.png)
 
 ## Project Description
-T.E.A.M is a ....application which will enable users to dboth share their treasure of new or used books with other users who are seeking free books for their use. The user is required to ...
+The Tracking Extraterrestrial Astroids and Meteorites(T.E.A.M) was created for the purpose of identifying potential threats posed by Astroids and Meteorites to Earth atmosphere.The primary objective of the TEAM App 's is to provide up-to-date critical information to in order to educate communities around the world to be prepared to mitigate the potential impact of Astroids related disasters. 
+<br>
+The user is required to ...
 <br>
 The twitter subscriber will receive a tweet message indicating that a match has been found...
 
