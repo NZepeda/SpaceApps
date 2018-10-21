@@ -8,12 +8,29 @@ class App extends Component {
     energy: "",
     mass: "",
     v_imp: "",
+    silustyle
+    blastRadius: "",
+    fireball: "",
+    richterScale: ""
+  };
+  updateState(name, energy, mass, v_imp, blastRadius, fireball, richterScale) {
+    this.setState({
+      name,
+      energy,
+      mass,
+      v_imp,
+      blastRadius,
+      fireball,
+      richterScale
+    });
+
     blastRadius:"",
     fireball:"",
     richterScale:""
   };
   updateState(name, energy, mass, v_imp, blastRadius, fireball, richterScale){
   this.setState({name, energy, mass, v_imp, blastRadius, fireball, richterScale })
+master
   }
   // updateStateRadius(radius, name) {
   //   this.setState({ radius, name });
@@ -28,8 +45,21 @@ class App extends Component {
     axios
       .get("https://teasteroidm-api.herokuapp.com/api")
       .then(json =>
+            silustyle
+        json.data.map(result =>
+          this.updateState(
+            result.name,
+            result.energy,
+            result.mass,
+            result.v_imp,
+            result.blastRadius,
+            result.fireball,
+            result.richterScale
+          )
+
         json.data.map(
           result => this.updateState(result.name, result.energy, result.mass, result.v_imp, result.blastRadius, result.fireball, result.richterScale)
+master
         )
       );
     // .then(newData => console.log(newData));
@@ -71,9 +101,15 @@ class App extends Component {
     return (
       <div className="App">
         <header />
+
+        {/* <Map circleOptions={this.getCircleOptions()} /> */}
+        <div id="knowledge">
+          <ul id="list">
+=======
         <Map circleOptions={this.getCircleOptions()} />
         <div id="knowledge">
           <ul>
+
             <li>Energy Amount: {energy}</li>
             <li>Mass: {mass}</li>
             <li>Velocity: {vel}</li>
@@ -86,9 +122,17 @@ class App extends Component {
         <div id="about" />
         <p>
           The Tracking Extraterrestrial Astroids and Meteorites (T.E.A.M) was
+ silustyle
+          created for the purpose of identifying potential threats posed by
+          Astroids and Meteorites to Earth atmosphere. The primary objective of
+          the TEAM App's is to provide up-to-date critical information to in
+          order to educate communities around the world to be prepared to
+          mitigate the potential impact of Astroids related disasters.
+
           created for the purpose of identifying potential threats posed by Astroids and Meteorites
           to Earth atmosphere. The primary objective of the TEAM App's is to provide up-to-date critical information to 
            in order to educate communities around the world to be prepared to mitigate the potential impact of Astroids related disasters. 
+ master
         </p>
       </div>
     );
