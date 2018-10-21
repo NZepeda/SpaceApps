@@ -184,7 +184,7 @@ export default App;
           The Tracking Extraterrestrial Astroids and Meteorites (T.E.A.M) was
           created for the purpose of identifying potential threats posed by Astroids and Meteorites
           to Earth atmosphere. The primary objective of the TEAM App's is to provide up-to-date critical information to 
-           in order to educate communities around the world to be prepared for potential disasters. 
+           in order to educate communities around the world to be prepared to mitigate the potential impact of Astroids related disasters. 
         </p>
       </div>
     );
